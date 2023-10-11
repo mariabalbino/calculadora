@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CALCULADORA</title>
+</head>
+<body>
+    <h1 id="tex">CALCULADORA</h1>
+    <center>
+    <input type="text" id="n1"> <input type="text" id="n2"> <br>
+    
+    <br>
+    <input class="bot" type="button" value="+" onclick="som(num1.value, num2.value)"> 
+    <input class="bot" type="button" value="-" onclick="sub(num1.value, num2.value)">
+    <input class="bot" type="button" value="x" onclick="vez(num1.value, num2.value)">
+    <input class="bot"type="button" value="/" onclick="div(num1.value, num2.value)">
+    
+    <p id="res"></p>
+    </center>
+
+</body>
+
+<script>
+
+    var num1 = document.getElementById("n1");
+    
+    var num2 = document.getElementById("n2");
+
+    var res = document.getElementById("res");
+    
+    function som (a, b){
+
+        var c = parseInt(a) + parseInt(b);
+        res.innerHTML = "A + B: " + c;
+        
+    }
+
+    function sub (a, b){
+
+        var c = parseInt(a) - parseInt(b);
+         if ( a < b ){
+
+           c = parseInt(b) - parseInt(a);
+
+        }
+        res.innerHTML = "Diferença entre A e B: " + c;
+       
+    }
+    function vez (a,b){
+
+        var c = parseInt(a) * parseInt(b);
+        res.innerHTML = "A x B: " + c;
+
+    }
+    function div (a, b){
+
+        var c = parseFloat(a) / parseFloat(b);
+        res.innerHTML = "A / B: " + c;
+
+    }
+    
+</script>
+</html>
+
